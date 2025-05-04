@@ -1,9 +1,9 @@
 {
   "name": "@ace-code/pdf-viewer",
   "type": "module",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A custom PDF viewer web component",
-  "main": "dist/pdf-viewer.bundle.js",
+  "main": "dist/pdf-viewer.bundle.mjs",
   "scripts": {
     "build": "rollup -c"
   },

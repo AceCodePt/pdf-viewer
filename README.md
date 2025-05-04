@@ -25,6 +25,11 @@ Get started immediately by adding the component directly to your HTML file using
         margin: 20px auto; /* Center it */
       }
     </style>
+
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ace-code/pdf-viewer/+esm"
+    ></script>
   </head>
   <body>
     <h1>My PDF Document</h1>
@@ -34,11 +39,6 @@ Get started immediately by adding the component directly to your HTML file using
       page="1"
     >
     </pdf-viewer>
-
-    <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/@ace-code/pdf-viewer/+esm"
-    ></script>
   </body>
 </html>
 ```
@@ -47,6 +47,28 @@ Get started immediately by adding the component directly to your HTML file using
 
 1. Save the code above as an HTML file (e.g., `viewer.html`).
 2. Open the file in your web browser. _Note: For loading local PDFs, run this through a local web server to avoid potential CORS issues._
+
+You can also run it using npm/pnpm/yarn:
+
+```sh
+npm install @ace-code/pdf-viewer
+```
+
+```sh
+pnpm install @ace-code/pdf-viewer
+```
+
+```sh
+yarn install @ace-code/pdf-viewer
+```
+
+and than add it as an standalone import:
+
+```html
+<script>
+  import "@ace-code/pdf-viewer";
+</script>
+```
 
 ## Features
 
@@ -358,4 +380,3 @@ Svelte handles custom elements well. Just make sure the CDN script is loaded.
 - Accessibility limited by canvas rendering (no direct text access).
 - `closed` Shadow DOM limits external access.
 - Does not expose PDF metadata like total page count.
-

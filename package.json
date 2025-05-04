@@ -1,11 +1,17 @@
 {
   "name": "@ace-code/pdf-viewer",
   "type": "module",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A custom PDF viewer web component",
   "main": "dist/pdf-viewer.bundle.js",
   "scripts": {
     "build": "rollup -c"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "url": "https://github.com/AceCodePt/pdf-viewer"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.2.3",

@@ -1,0 +1,18 @@
+{
+  "name": "@ace-code/pdf-viewer",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "A custom PDF viewer web component",
+  "main": "dist/pdf-viewer.bundle.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "pdfjs-dist": "^5.2.133",
+    "rollup": "^4.9.6",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "typescript": "^5.4.2"
+  }
+}

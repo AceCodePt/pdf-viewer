@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF Viewer Component Example</title>
+    <style>
+      pdf-viewer {
+        display: block;
+        width: 800px; /* Adjust as needed */
+        height: 600px; /* Adjust as needed */
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+      }
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+    </style>
+    <!-- optional this is being done inside the pdf-previewer -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/pdfjs-dist/+esm"
+      type="module"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@ace-code/pdf-viewer@1.0.1/+esm"
+      type="module"
+    ></script>
+  </head>
+  <body>
+    <h1>PDF Viewer Component Examples</h1>
+
+    <h2>Example 1: Displaying Page 1 of a PDF</h2>
+    <pdf-viewer url="public/pdfs/example1.pdf" page="1"></pdf-viewer>
+
+    <h2>Example 2: Displaying Page 3 of the same PDF</h2>
+    <pdf-viewer url="public/pdfs/example1.pdf" page="3"></pdf-viewer>
+
+    <h2>Example 3: Displaying another PDF (Page 1)</h2>
+    <pdf-viewer url="public/pdfs/example2.pdf" page="1"></pdf-viewer>
+
+    <h2>Example 3: How to change the pdf</h2>
+    <button type="button" onclick="this.nextElementSibling.page--">
+      previous page of pdf
+    </button>
+    <pdf-viewer url="public/pdfs/example3.pdf" page="1"></pdf-viewer>
+    <button type="button" onclick="this.previousElementSibling.page++">
+      next page of pdf
+    </button>
+  </body>
+</html>

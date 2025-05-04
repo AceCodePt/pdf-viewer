@@ -101,9 +101,14 @@ template.innerHTML = `
       }
       if (name === "url" && newValue) {
         this._pdfDocument = withResolvers<PDFDocumentProxy>();
-        // @ts-ignore
-        pdfjsLib
-          .getDocument(newValue)
+        let getDocumentParams: Parameters<
+          (typeof window.pdfjsLib)["getDocument"]
+        >[0] = newValue;
+        if (!/^http/.test(newValue)) {
+          getDocumentParams = { data: newValue };
+        }
+        window.pdfjsLib
+          .getDocument(getDocumentParams)
           .promise.then(this._pdfDocument.resolve)
           .catch(this._pdfDocument.reject);
       }

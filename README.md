@@ -223,10 +223,10 @@ Load the component script (e.g., in `public/index.html` or via a side-effect imp
 import React, { useState, useEffect } from "react";
 
 // Option 1: Ensure the script is loaded via <script> tag in index.html
-// <script type="module" src="[https://cdn.jsdelivr.net/npm/@ace-code/pdf-viewer/+esm](https://cdn.jsdelivr.net/npm/@ace-code/pdf-viewer/+esm)"></script>
+// <script type="module" src="https://cdn.jsdelivr.net/npm/@ace-code/pdf-viewer/+esm"></script>
 
 // Option 2: Import for side effects (might depend on build tool capabilities)
-import "[https://cdn.jsdelivr.net/npm/@ace-code/pdf-viewer/+esm](https://cdn.jsdelivr.net/npm/@ace-code/pdf-viewer/+esm)";
+import "https://cdn.jsdelivr.net/npm/@ace-code/pdf-viewer/+esm";
 
 function PdfViewerComponent() {
   const [currentPage, setCurrentPage] = useState(1);

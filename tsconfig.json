@@ -10,6 +10,6 @@
     "declaration": false, // We don't need declaration files for this simple component
     "outDir": "dist/temp" // Temporary output directory for TypeScript compilation
   },
-  "include": ["global.d.ts", "pdf-viewer.ts"],
+  "include": ["global.d.ts", "pdf-viewer.mts"],
   "exclude": ["node_modules", "dist"]
 }

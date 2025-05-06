@@ -85,8 +85,13 @@ template.innerHTML = `
             if (name === "url" && newValue) {
                 this._pdfDocument = withResolvers();
                 let getDocumentParams = newValue;
-                if (!/^http/.test(newValue)) {
+                // This is a binary
+                if (/^%PDF/i.test(newValue)) {
                     getDocumentParams = { data: newValue };
+                    // Isn't http then base64
+                }
+                else if (!/^http/.test(newValue)) {
+                    getDocumentParams = { data: atob(newValue) };
                 }
                 window.pdfjsLib
                     .getDocument(getDocumentParams)

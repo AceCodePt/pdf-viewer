@@ -104,8 +104,12 @@ template.innerHTML = `
         let getDocumentParams: Parameters<
           (typeof window.pdfjsLib)["getDocument"]
         >[0] = newValue;
-        if (!/^http/.test(newValue)) {
+        // This is a binary
+        if (/^%PDF/i.test(newValue)) {
           getDocumentParams = { data: newValue };
+          // Isn't http then base64
+        } else if (!/^http/.test(newValue)) {
+          getDocumentParams = { data: atob(newValue) };
         }
         window.pdfjsLib
           .getDocument(getDocumentParams)

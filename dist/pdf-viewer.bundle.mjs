@@ -96,7 +96,7 @@ template.innerHTML = `
             if (!this.rendering) {
                 this.rendering = true;
                 requestAnimationFrame(() => {
-                    this.renderPage().then(() => {
+                    this.renderPage().finally(() => {
                         this.rendering = false;
                     });
                 });
